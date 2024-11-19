@@ -256,7 +256,7 @@
       .then(response => response.json())
       .then(countyData => {
         // Download both the health outcomes and factors ranks and the subcategories
-        d3.csv('2023CountyHealthRankingsData-HealthOutcomes.csv', function(error, healthOutcomes) {
+        d3.csv('./2023CountyHealthRankingsData-HealthOutcomes.csv', function(error, healthOutcomes) {
           if (error) {
             console.error('Error loading CSV data:', error);
             return;
@@ -268,7 +268,7 @@
             row.FIPS = newFIPS;
             csvData[newFIPS] = row;
           });
-          d3.csv('2023CountyHealthRankingsData-SubRankings.csv', function(error, subRankings) {
+          d3.csv('./2023CountyHealthRankingsData-SubRankings.csv', function(error, subRankings) {
           if (error) {
             console.error('Error loading CSV data:', error);
             return;
